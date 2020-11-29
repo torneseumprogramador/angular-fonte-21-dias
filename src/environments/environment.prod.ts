@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://desafio-21-dias-aula-deploy.azurewebsites.net'
 };

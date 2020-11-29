@@ -1,0 +1,52 @@
+<div class="container">
+  <button class="btn btn-danger" (click)="sair()">Sair do sistema</button>
+  <hr>
+  <h1>Novo cliente</h1>
+  <div class="form-signin">
+    <label for="nome" class="sr-only">Login</label>
+    <input type="text" id="nome" [(ngModel)]="cliente.nome" name="nome" class="form-control" placeholder="Nome">
+
+    <label for="endereco" class="sr-only">Login</label>
+    <input type="text" id="endereco" [(ngModel)]="cliente.endereco" name="endereco" class="form-control" placeholder="Endereço">
+
+    <label for="telefone" class="sr-only">Login</label>
+    <input type="text" id="telefone" [(ngModel)]="cliente.telefone" name="telefone" class="form-control" placeholder="Telefone">
+
+    <label for="regraAcesso" class="sr-only">Login</label>
+    <input type="text" id="regraAcesso" [(ngModel)]="cliente.regraAcesso" name="regraAcesso" class="form-control" placeholder="Regra de acesso">
+
+    <label for="email" class="sr-only">Login</label>
+    <input type="text" id="email" [(ngModel)]="cliente.login" name="email" class="form-control" placeholder="Login">
+
+    <label for="senha" class="sr-only">Senha</label>
+    <input type="password" id="senha" [(ngModel)]="cliente.senha" name="senha" class="form-control" placeholder="Senha">
+    <button class="btn btn-lg btn-primary btn-block" (click)="salvar()" type="submit">Incluir</button>
+  </div>
+  <hr>
+
+  <h1>Lista de clientes</h1>
+  <hr>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Endereco</th>
+        <th scope="col">Login</th>
+        <th scope="col">Acesso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <th scope="row">{{cliente.id}}</th>
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.telefone}}</td>
+        <td>{{cliente.endereco}}</td>
+        <td>{{cliente.login}}</td>
+        <td>{{cliente.regraAcesso}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
